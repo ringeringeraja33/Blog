@@ -282,7 +282,7 @@ a:hover {
 
 .footer-poem {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.7;
   color: var(--foreground);
 }
