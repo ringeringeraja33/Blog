@@ -280,9 +280,10 @@ a:hover {
   margin: 0;
 }
 
-.footer-line {
+.footer-poem {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 1.7;
   color: var(--foreground);
 }
 
