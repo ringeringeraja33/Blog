@@ -103,7 +103,7 @@ a:hover {
 
 .hero-banner img {
   width: 100%;
-  height: clamp(300px, 54vw, 529px);
+  height: clamp(420px, 48vw, 720px);
   object-fit: cover;
   object-position: 50% 0%;
 }
