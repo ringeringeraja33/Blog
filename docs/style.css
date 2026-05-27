@@ -308,8 +308,8 @@ a:hover {
 
   .site-identity {
     position: absolute;
-    left: 10%;
-    right: 10%;
+    left: 11.5%;
+    right: 11.5%;
     top: 50%;
     grid-column: auto;
     justify-self: stretch;
@@ -321,17 +321,17 @@ a:hover {
   }
 
   .site-title {
-    padding: 22px 16px 14px;
-    font-size: 40px;
-    letter-spacing: 2px;
+    padding: 20px 18px 12px;
+    font-size: clamp(36px, 10.4vw, 42px);
+    letter-spacing: 1.5px;
   }
 
   .site-tagline {
     margin: 0;
     border-top: 1px solid #2f2f2f;
-    padding: 16px;
+    padding: 13px 18px 14px;
     color: #777777;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .header-nav {
