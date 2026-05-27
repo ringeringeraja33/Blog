@@ -109,7 +109,20 @@ a:hover {
 }
 
 .mobile-menu-placeholder {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 20px;
+  background: #000000;
+}
+
+.mobile-menu-placeholder::before {
+  content: "";
+  display: block;
+  width: min(140px, 38vw);
+  height: 1px;
+  background: #4a4a4a;
 }
 
 .page-shell {
@@ -340,23 +353,6 @@ a:hover {
 
   .header-nav {
     display: none;
-  }
-
-  .mobile-menu-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 52px;
-    padding: 0 20px;
-    background: #000000;
-  }
-
-  .mobile-menu-placeholder::before {
-    content: "";
-    display: block;
-    width: min(140px, 38vw);
-    height: 1px;
-    background: #4a4a4a;
   }
 
   .hero-banner {
