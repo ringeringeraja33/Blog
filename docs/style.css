@@ -95,6 +95,19 @@ a:hover {
   text-transform: lowercase;
 }
 
+.hero-banner {
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.hero-banner img {
+  width: 100%;
+  height: clamp(300px, 54vw, 529px);
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
 .page-shell {
   width: min(calc(100% - 32px), var(--measure));
   margin: 0 auto;
