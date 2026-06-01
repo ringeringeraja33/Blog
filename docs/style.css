@@ -254,19 +254,6 @@ a:hover {
   border-bottom: 1px solid #eeeeee;
 }
 
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.social-links a {
-  border: 1px solid var(--line);
-  padding: 6px 9px;
-  font-size: 13px;
-  font-weight: 650;
-}
-
 .site-footer {
   width: min(calc(100% - 32px), var(--measure));
   margin: 0 auto;
@@ -361,10 +348,6 @@ a:hover {
   .about-block {
     grid-template-columns: 1fr;
     justify-items: center;
-  }
-
-  .social-links {
-    justify-content: center;
   }
 }
 
