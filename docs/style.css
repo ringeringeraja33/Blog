@@ -261,10 +261,28 @@ a:hover {
 }
 
 .social-links a {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--line);
-  padding: 6px 9px;
-  font-size: 13px;
-  font-weight: 650;
+  color: var(--accent);
+}
+
+.social-links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .site-footer {
