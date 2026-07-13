@@ -1,0 +1,8 @@
+/.obsidian/
+.DS_Store
+**/.DS_Store
+__pycache__/
+.venv/
+docs/posts/*.html
+docs/assets/*
+!docs/assets/.gitkeep
