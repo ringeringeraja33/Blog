@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+    <link rel="icon" href="https://viriditas09.wordpress.com/wp-content/uploads/2025/05/cropped-screenshot-2025-05-29-at-22.13.09.png?w=96">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=20260713">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="site-identity">
+          <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></h1>
+          <p class="site-tagline">{{ site.description | escape }}</p>
+        </div>
+        <nav class="header-nav" aria-label="主要导航">
+          <a href="{{ '/' | relative_url }}#posts">posts</a>
+        </nav>
+      </div>
+    </header>
+    <main class="article-shell">
+      <a class="article-back" href="{{ '/' | relative_url }}#posts">← 返回文章列表</a>
+      <article>
+        <header class="article-header">
+          <h1 class="article-title">{{ page.title | escape }}</h1>
+          <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+          {% if page.description %}<p class="article-description">{{ page.description | escape }}</p>{% endif %}
+          {% if page.tags.size > 0 %}
+          <ul class="post-tags" aria-label="标签">
+            {% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+        </header>
+        <div class="article-body">{{ content }}</div>
+      </article>
+    </main>
+  </body>
+</html>

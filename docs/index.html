@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="zh-CN">
   <head>
@@ -6,13 +8,13 @@
     <meta name="description" content="Ævum - 軌跡">
     <title>Ævum</title>
     <link rel="icon" href="https://viriditas09.wordpress.com/wp-content/uploads/2025/05/cropped-screenshot-2025-05-29-at-22.13.09.png?w=96">
-    <link rel="stylesheet" href="./style.css?v=20260602-3">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=20260713">
   </head>
   <body>
     <header class="site-header" id="top">
       <div class="header-inner">
         <div class="site-identity">
-          <h1 class="site-title"><a href="#top">Ævum</a></h1>
+          <h1 class="site-title"><a href="{{ '/' | relative_url }}#top">Ævum</a></h1>
           <p class="site-tagline">軌跡</p>
         </div>
         <nav class="header-nav" aria-label="主要导航">
@@ -29,9 +31,27 @@
 
     <main class="page-shell">
       <section class="content-column" id="posts" aria-label="文章列表">
-        <!-- POSTS:START -->
+        {% if site.posts == empty %}
         <div class="empty-posts"><p>文章稍后整理。</p></div>
-        <!-- POSTS:END -->
+        {% else %}
+        <div class="post-list">
+          {% for post in site.posts %}
+          <article class="post-item">
+            <header class="post-head">
+              <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+              <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+            </header>
+            {% if post.description %}<p class="post-summary">{{ post.description | escape }}</p>{% endif %}
+            {% if post.tags.size > 0 %}
+            <ul class="post-tags" aria-label="标签">
+              {% for tag in post.tags %}<li>{{ tag | escape }}</li>{% endfor %}
+            </ul>
+            {% endif %}
+            <a class="read-link" href="{{ post.url | relative_url }}">阅读全文 →</a>
+          </article>
+          {% endfor %}
+        </div>
+        {% endif %}
       </section>
 
       <aside class="sidebar" aria-label="侧边栏">

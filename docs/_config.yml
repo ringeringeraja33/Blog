@@ -1,0 +1,10 @@
+title: Ævum
+description: 軌跡
+url: https://viriditas.live
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+markdown: kramdown
+permalink: /posts/:title/
+future: false
+show_drafts: false
