@@ -1,0 +1,22 @@
+<aside class="sidebar" aria-label="侧边栏">
+  <section class="sidebar-card author-card">
+    <img src="{{ site.author.avatar }}" alt="{{ site.author.name | escape }}" loading="lazy">
+    <div><strong>{{ site.author.name }}</strong><p>{{ site.author.bio }}</p></div>
+    <nav class="site-counts" aria-label="内容统计">
+      <a href="{{ '/archive/' | relative_url }}"><strong>{{ site.posts | size }}</strong><span>文章</span></a>
+      <a href="{{ '/categories/' | relative_url }}"><strong>{{ site.categories | size }}</strong><span>分类</span></a>
+      <a href="{{ '/tags/' | relative_url }}"><strong>{{ site.tags | size }}</strong><span>标签</span></a>
+    </nav>
+  </section>
+  {% if site.announcement %}<section class="sidebar-card"><h2>公告</h2><p>{{ site.announcement }}</p></section>{% endif %}
+  <section class="sidebar-card">
+    <h2>最新发布</h2>
+    <ol class="latest-list">
+      {% for post in site.posts limit: 5 %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time></li>{% endfor %}
+    </ol>
+  </section>
+  <section class="sidebar-card">
+    <h2>链接</h2>
+    <div class="compact-links"><a href="https://github.com/ringeringeraja33" rel="noopener">GitHub</a><a href="https://m.otter.homes/@viriditas" rel="me noopener">Mastodon</a><a href="https://www.instagram.com/vividd0019/" rel="noopener">Instagram</a><a href="https://x.com/Viriditas09" rel="noopener">X</a></div>
+  </section>
+</aside>

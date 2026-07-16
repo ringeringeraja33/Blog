@@ -1,40 +1,29 @@
-<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ page.description | default: site.description | escape }}">
-    <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
-    <link rel="icon" href="https://viriditas09.wordpress.com/wp-content/uploads/2025/05/cropped-screenshot-2025-05-29-at-22.13.09.png?w=96">
-    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=20260713">
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="header-inner">
-        <div class="site-identity">
-          <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></h1>
-          <p class="site-tagline">{{ site.description | escape }}</p>
-        </div>
-        <nav class="header-nav" aria-label="主要导航">
-          <a href="{{ '/' | relative_url }}#posts">posts</a>
-        </nav>
-      </div>
+---
+layout: default
+---
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+<main class="article-page" id="main-content">
+  <article class="article-main">
+    <a class="article-back" href="{{ '/' | relative_url }}">← 返回文章列表</a>
+    <header class="article-header">
+      {% if page.categories.size > 0 %}<a class="post-kicker" href="{{ '/categories/' | relative_url }}#{{ page.categories | first | slugify }}">{{ page.categories | first }}</a>{% endif %}
+      <h1 class="article-title">{{ page.title | escape }}</h1>
+      <div class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">发布于 {{ page.date | date: "%Y-%m-%d" }}</time>{% if page.last_modified_at %}<span>更新于 {{ page.last_modified_at | date: "%Y-%m-%d" }}</span>{% endif %}<span>约 {{ content | strip_html | size }} 字</span><span id="busuanzi_container_page_pv">阅读 <span id="busuanzi_value_page_pv">—</span></span></div>
+      {% if page.description %}<p class="article-description">{{ page.description | escape }}</p>{% endif %}
+      {% if page.tags.size > 0 %}<ul class="post-tags" aria-label="标签">{% for tag in page.tags %}<li><a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">#{{ tag | escape }}</a></li>{% endfor %}</ul>{% endif %}
     </header>
-    <main class="article-shell">
-      <a class="article-back" href="{{ '/' | relative_url }}#posts">← 返回文章列表</a>
-      <article>
-        <header class="article-header">
-          <h1 class="article-title">{{ page.title | escape }}</h1>
-          <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
-          {% if page.description %}<p class="article-description">{{ page.description | escape }}</p>{% endif %}
-          {% if page.tags.size > 0 %}
-          <ul class="post-tags" aria-label="标签">
-            {% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}
-          </ul>
-          {% endif %}
-        </header>
-        <div class="article-body">{{ content }}</div>
-      </article>
-    </main>
-  </body>
-</html>
+    <div class="article-body" data-article-body>{{ content }}</div>
+    <footer class="article-footer">
+      <div class="license-box"><strong>许可与转载</strong><p>本文作者为 {{ site.author.name }}，采用 {{ site.license }} 许可协议。转载请保留作者、原文链接与许可声明。</p><button type="button" data-copy-link>复制本文链接</button></div>
+      {% if site.comments.provider == 'utterances' and site.comments.repo %}
+      <section class="comments" aria-labelledby="comments-title"><h2 id="comments-title">评论</h2><p class="comments-note">评论由 GitHub Issues 托管，首次留言需要登录 GitHub。</p><script src="https://utteranc.es/client.js" repo="{{ site.comments.repo }}" issue-term="pathname" label="{{ site.comments.label }}" theme="github-light" crossorigin="anonymous" async></script></section>
+      {% endif %}
+      <section class="related-posts" aria-labelledby="related-title"><h2 id="related-title">相关文章</h2><div class="related-grid">{% for related in site.related_posts limit: 4 %}<a href="{{ related.url | relative_url }}"><span>{{ related.date | date: '%Y-%m-%d' }}</span><strong>{{ related.title }}</strong></a>{% endfor %}{% if site.posts.size <= 1 %}<p>发布更多文章后，这里会自动显示关联内容。</p>{% endif %}</div></section>
+      <nav class="post-navigation" aria-label="相邻文章">{% if page.previous %}<a rel="prev" href="{{ page.previous.url | relative_url }}"><span>上一篇</span><strong>{{ page.previous.title }}</strong></a>{% endif %}{% if page.next %}<a rel="next" href="{{ page.next.url | relative_url }}"><span>下一篇</span><strong>{{ page.next.title }}</strong></a>{% endif %}</nav>
+    </footer>
+  </article>
+  <aside class="article-aside">
+    <section class="toc-card" data-toc-card hidden><div class="toc-head"><h2>目录</h2><span data-reading-percent>0%</span></div><nav data-toc aria-label="文章目录"></nav></section>
+    {% include sidebar.html %}
+  </aside>
+</main>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'zh-CN' }}" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f1ea">
+    <link rel="icon" href="{{ site.author.avatar }}">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=20260716">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+    {% seo %}
+  </head>
+  <body data-baseurl="{{ site.baseurl }}">
+    <a class="skip-link" href="#main-content">跳到正文</a>
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
+    {% include search-dialog.html %}
+    <button class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部">↑</button>
+    <script src="{{ '/assets/site.js' | relative_url }}?v=20260716" defer></script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+---
+layout: default
+title: 标签
+permalink: /tags/
+---
+<main class="page-shell" id="main-content">
+  <section class="content-column collection-page">
+    <header class="section-heading"><p>Keywords</p><h1>标签</h1><span>共 {{ site.tags | size }} 个标签</span></header>
+    <nav class="term-cloud" aria-label="标签索引">{% assign sorted_tags = site.tags | sort %}{% for tag in sorted_tags %}<a href="#{{ tag[0] | slugify }}">#{{ tag[0] }} <span>{{ tag[1] | size }}</span></a>{% endfor %}</nav>
+    {% for tag in sorted_tags %}<section class="term-group" id="{{ tag[0] | slugify }}"><h2>#{{ tag[0] }} <span>{{ tag[1] | size }}</span></h2><ol>{% for post in tag[1] %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ol></section>{% else %}<p class="empty-state">文章添加 tags 字段后会在这里自动汇总。</p>{% endfor %}
+  </section>
+  {% include sidebar.html %}
+</main>

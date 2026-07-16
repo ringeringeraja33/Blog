@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }} 首页">
+      <span class="brand-title">{{ site.title }}</span>
+      <span class="brand-tagline">{{ site.description }}</span>
+    </a>
+    <button class="mobile-menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">菜单</button>
+    <nav class="header-nav" id="site-navigation" aria-label="主要导航">
+      <a href="{{ '/' | relative_url }}">文章</a>
+      <a href="{{ '/archive/' | relative_url }}">归档</a>
+      <a href="{{ '/categories/' | relative_url }}">分类</a>
+      <a href="{{ '/tags/' | relative_url }}">标签</a>
+      <a href="{{ '/about/' | relative_url }}">关于</a>
+      <a href="{{ '/links/' | relative_url }}">友链</a>
+    </nav>
+    <div class="header-tools" aria-label="站点工具">
+      <button type="button" data-search-open aria-label="搜索文章" title="搜索文章">⌕</button>
+      <button type="button" data-random-post aria-label="随机文章" title="随机文章">⌘</button>
+      <button type="button" data-theme-toggle aria-label="切换深色模式" title="切换深色模式">◐</button>
+    </div>
+  </div>
+</header>

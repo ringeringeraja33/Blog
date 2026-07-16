@@ -1,0 +1,18 @@
+---
+layout: default
+title: 归档
+permalink: /archive/
+---
+<main class="page-shell" id="main-content">
+  <section class="content-column collection-page">
+    <header class="section-heading"><p>Chronology</p><h1>归档</h1><span>共 {{ site.posts | size }} 篇文章</span></header>
+    {% assign current_month = '' %}
+    {% for post in site.posts %}
+      {% assign post_month = post.date | date: '%Y-%m' %}
+      {% if post_month != current_month %}{% unless forloop.first %}</ol></section>{% endunless %}<section class="archive-group" id="{{ post_month }}"><h2>{{ post_month }}</h2><ol>{% assign current_month = post_month %}{% endif %}
+      <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m-%d' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% if forloop.last %}</ol></section>{% endif %}
+    {% else %}<p class="empty-state">尚无已发布文章。</p>{% endfor %}
+  </section>
+  {% include sidebar.html %}
+</main>

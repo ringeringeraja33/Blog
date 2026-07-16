@@ -1,0 +1,13 @@
+---
+layout: default
+title: 分类
+permalink: /categories/
+---
+<main class="page-shell" id="main-content">
+  <section class="content-column collection-page">
+    <header class="section-heading"><p>Subjects</p><h1>分类</h1><span>共 {{ site.categories | size }} 个分类</span></header>
+    <nav class="term-cloud" aria-label="分类索引">{% assign sorted_categories = site.categories | sort %}{% for category in sorted_categories %}<a href="#{{ category[0] | slugify }}">{{ category[0] }} <span>{{ category[1] | size }}</span></a>{% endfor %}</nav>
+    {% for category in sorted_categories %}<section class="term-group" id="{{ category[0] | slugify }}"><h2>{{ category[0] }} <span>{{ category[1] | size }}</span></h2><ol>{% for post in category[1] %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ol></section>{% else %}<p class="empty-state">文章添加 categories 字段后会在这里自动归类。</p>{% endfor %}
+  </section>
+  {% include sidebar.html %}
+</main>
