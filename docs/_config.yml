@@ -12,7 +12,7 @@ author:
   name: Viriditas
   bio: 某人的兔子洞
   avatar: https://viriditas09.wordpress.com/wp-content/uploads/2025/05/cropped-screenshot-2025-05-29-at-22.13.09.png
-announcement: 在这里记录阅读、游戏与沿途所见。
+announcement: WIP
 paginate: 10
 paginate_path: "/page/:num/"
 license: CC BY-NC-SA 4.0
