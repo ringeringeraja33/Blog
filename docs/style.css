@@ -61,6 +61,9 @@ button { color: inherit; }
 .header-tools button, .mobile-menu-button, .back-to-top { border: 1px solid var(--line); border-radius: 50%; background: var(--surface); cursor: pointer; }
 .header-tools button { width: 38px; height: 38px; font-size: 18px; }
 .header-tools button:hover, .back-to-top:hover { border-color: var(--accent); color: var(--accent); }
+.search-icon { position: relative; display: block; width: 19px; height: 19px; margin: auto; }
+.search-icon::before { position: absolute; top: 2px; left: 2px; width: 8px; height: 8px; border: 2px solid currentColor; border-radius: 50%; content: ""; }
+.search-icon::after { position: absolute; top: 12px; left: 11px; width: 8px; height: 2px; border-radius: 2px; background: currentColor; content: ""; transform: rotate(45deg); transform-origin: left center; }
 .mobile-menu-button { display: none; border-radius: 999px; padding: 6px 12px; font-size: 13px; }
 
 .hero-banner { position: relative; min-height: min(68vw, 720px); overflow: hidden; background: #242019; }
