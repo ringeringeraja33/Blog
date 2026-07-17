@@ -116,7 +116,11 @@ button { color: inherit; }
 .latest-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .latest-list a { display: -webkit-box; overflow: hidden; font-family: Georgia, "Songti SC", serif; line-height: 1.4; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .latest-list time { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; }
-.compact-links { display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 13px; }
+.social-links { display: flex; flex-wrap: wrap; gap: 9px; }
+.social-links a { display: inline-flex; width: 38px; height: 38px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 50%; color: var(--foreground); transition: border-color .2s ease, color .2s ease, transform .2s ease; }
+.social-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; transform: translateY(-1px); }
+.social-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.social-icon { width: 18px; height: 18px; fill: currentColor; }
 
 .article-page { width: min(calc(100% - 32px), var(--measure)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 800px) minmax(240px, 1fr); gap: 56px; padding: 58px 0 80px; }
 .article-main { min-width: 0; }
