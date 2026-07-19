@@ -67,12 +67,10 @@ button { color: inherit; }
 .mobile-menu-button { display: none; border-radius: 999px; padding: 6px 12px; font-size: 13px; }
 
 .hero-banner { position: relative; isolation: isolate; min-height: min(68vw, 720px); overflow: hidden; background: var(--background); }
-.hero-banner::after { position: absolute; z-index: 1; right: 0; bottom: -1px; left: 0; height: clamp(28px, 3.5vw, 48px); background: linear-gradient(to bottom, transparent 0%, var(--background) 100%); content: ""; pointer-events: none; }
 .hero-banner > img { width: 100%; height: min(68vw, 720px); object-fit: cover; object-position: 50% 4%; filter: saturate(.94) contrast(.98); }
-.hero-copy { position: absolute; z-index: 2; right: 0; bottom: 11%; left: 0; color: #fff; text-align: center; text-shadow: 0 2px 8px rgb(0 0 0 / 48%), 0 8px 32px rgb(0 0 0 / 28%); }
-.hero-copy::before { position: absolute; z-index: -1; top: 50%; left: 50%; width: clamp(170px, 16vw, 260px); height: clamp(90px, 9vw, 130px); background: radial-gradient(ellipse, rgb(25 16 10 / 50%) 0%, rgb(25 16 10 / 22%) 44%, transparent 74%); content: ""; transform: translate(-50%, -50%); pointer-events: none; }
+.hero-copy { position: absolute; z-index: 2; right: 0; bottom: 11%; left: 0; color: #fff; text-align: center; text-shadow: 2px 3px 2px rgb(0 0 0 / 58%), 8px 10px 9px rgb(0 0 0 / 46%); }
 .hero-copy p { margin: 0 0 12px; font: 500 clamp(28px, 5vw, 62px)/1.15 Georgia, "Songti SC", serif; letter-spacing: .16em; }
-.hero-copy a { font-size: 13px; letter-spacing: .12em; }
+.hero-copy a { font-size: 13px; letter-spacing: .12em; text-shadow: 1px 2px 1px rgb(0 0 0 / 62%), 4px 5px 4px rgb(0 0 0 / 44%); }
 .hero-copy a:hover { color: #fff; }
 
 .page-shell { width: min(calc(100% - 32px), var(--measure)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 42px; padding: 56px 0 64px; }
