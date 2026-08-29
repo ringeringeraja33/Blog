@@ -11,7 +11,7 @@ show_drafts: false
 author:
   name: 不是路
   bio: 某人的兔子洞
-  avatar: https://viriditas09.wordpress.com/wp-content/uploads/2025/05/cropped-screenshot-2025-05-29-at-22.13.09.png
+  avatar: /assets/images/cropped-screenshot-2025-05-29-at-22.13.09.png
 announcement: WIP
 paginate: 10
 paginate_path: "/page/:num/"
